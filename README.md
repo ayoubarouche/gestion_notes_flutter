@@ -1,6 +1,5 @@
 # Gestion Notes
-hi these is a flutter application that help some schools to manages there notes using excel files 
-	inside these application 
+Hi these is a flutter application that can help schools to manage students notes using excel files and firebase 
 # Important Files
 	- screens  : it's responsable to handle all the screens of the application
 	- containers : it's help if we have a container that we want to use it more than one time
