@@ -27,7 +27,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Theme.of(context).primaryColor, Colors.white],
+                    colors: [
+                      Theme.of(context).primaryColor,
+                      Colors.white,
+                    ],
                     stops: [0.7, 1.2],
                   ),
                 ),
@@ -53,20 +56,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       SizedBox(height: 30.0),
-                      InputInformation(' الاسم', 'ادخل الاسم كاملا',nameController,Icon(Icons.account_circle,color: Colors.white,)),
+                      InputInformation(
+                        ' الاسم',
+                        'ادخل الاسم كاملا',
+                        nameController,
+                        Icon(
+                          Icons.account_circle,
+                          color: Colors.white,
+                        ),
+                      ),
                       SizedBox(
                         height: 20.0,
                       ),
-                      InputInformation('الاميل', 'ادخل الاميل',emailController,Icon(Icons.email,color: Colors.white,)),
+                      InputInformation(
+                        'الاميل',
+                        'ادخل الاميل',
+                        emailController,
+                        Icon(
+                          Icons.email,
+                          color: Colors.white,
+                        ),
+                      ),
                       SizedBox(
                         height: 30.0,
                       ),
                       PasswordTF(passwordController),
-                      LoginBtn('انشاء حساب ',(){}),
-                      OtherChoice('لديك حساب ؟ ', 'تسجيل الدخول', () {
+                      LoginBtn('انشاء حساب ', () {
                         if (Navigator.canPop(context)) Navigator.pop(context);
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/admin');
                       }),
+                      OtherChoice(
+                        'لديك حساب ؟ ',
+                        'تسجيل الدخول',
+                        () {
+                          if (Navigator.canPop(context)) Navigator.pop(context);
+                          Navigator.pushNamed(context, '/login');
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -75,16 +101,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
       ),
-
     );
   }
+
   @override
   void dispose() {
-    
     emailController.dispose();
     passwordController.dispose();
     nameController.dispose();
     super.dispose();
-
   }
 }

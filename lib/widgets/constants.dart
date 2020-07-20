@@ -28,3 +28,5 @@ final ErreurMessageStyle = TextStyle(
   color: Color.fromRGBO(139, 97, 228, 1),
   fontFamily: 'OpenSans',
 );
+
+  final choiceButtonStyle = TextStyle(color: Colors.white, fontSize: 20.0);

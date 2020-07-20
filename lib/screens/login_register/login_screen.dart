@@ -26,7 +26,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Theme.of(context).primaryColor, Colors.white],
+                    colors: [
+                      Theme.of(context).primaryColor,
+                      Colors.white,
+                    ],
                     stops: [0.5, 0.9],
                   ),
                 ),
@@ -52,15 +55,27 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(height: 30.0),
-                      InputInformation('الاميل', 'ادخل الاميل',email_controller,Icon(Icons.email,color: Colors.white,)),
+                      InputInformation(
+                        'الاميل',
+                        'ادخل الاميل',
+                        email_controller,
+                        Icon(
+                          Icons.email,
+                          color: Colors.white,
+                        ),
+                      ),
                       SizedBox(
                         height: 30.0,
                       ),
                       PasswordTF(password_controller),
-                      LoginBtn('تسجيل الدخول',()=>Navigator.pushNamed(context, '/accountNotActivatedYet')),
+                      LoginBtn(
+                        'تسجيل الدخول',
+                        () => Navigator.pushNamed(
+                            context, '/accountNotActivatedYet'),
+                      ),
                       OtherChoice('ليس لديك حساب ؟ ', 'انشاء حساب', () {
                         if (Navigator.canPop(context)) Navigator.pop(context);
-                        Navigator.pushNamed(context, '/register');
+                        Navigator.pushNamed(context, '/register',);
                       }),
                     ],
                   ),
@@ -70,12 +85,11 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-     
     );
   }
+
   @override
   void dispose() {
-    // TODO: implement dispose
     email_controller.dispose();
     password_controller.dispose();
     super.dispose();

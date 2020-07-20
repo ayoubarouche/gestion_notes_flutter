@@ -7,3 +7,4 @@
 library containers;
 
 export 'containers/register_and_login_container.dart';
+export 'containers/classes_container.dart';
